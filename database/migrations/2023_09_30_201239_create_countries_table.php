@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('population');
+            $table->string('territory');
+            $table->text('description');
+            $table->string('avg_price');
+            $table->string('image');
+            $table->string('continent');
+
             $table->timestamps();
         });
     }
