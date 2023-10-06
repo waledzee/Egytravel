@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,71 +19,83 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <section id="section-1">
-  @foreach($countries as $country)
     <div class="content-slider">
-      <input type="radio" id="banner{{$country->id}}" class="sec-{{$country->id}}-input" name="banner" checked>
-      <div class="slider">
-        <div id="top-banner-{{$country->id}}" class="banner">
-          <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
-              <h1>{{$country->name}}</h1>
-              <div class="border-button"><a href="about.html">Go There</a></div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="more-info">
-                    <div class="row">
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-user"></i>
-                        <h4><span>Population:</span><br>{{$country->population}} M</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-globe"></i>
-                        <h4><span>Territory:</span><br>{{$country->territory}} KM<em>2</em></h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-home"></i>
-                        <h4><span>AVG Price:</span><br>${{$country->avg_price}}</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                      </div>
+        @foreach($countries as $country)
+        <input type="radio" id="banner{{$country->id}}" class="sec-1-input" name="banner" checked>
+        @endforeach
+        <div class="slider">
+            @foreach($countries as $country)
+            <div id="top-banner-{{$country->id}}" class="banner">
+                <div class="banner-inner-wrapper header-text">
+                    <div class="main-caption">
+                        <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+                        <h1>{{$country->name}}</h1>
+                        <div class="border-button"><a href="about.html">Go There</a></div>
                     </div>
-                  </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="more-info">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-user"></i>
+                                            <h4><span>Population:</span><br>{{$country->population}} M</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-globe"></i>
+                                            <h4><span>Territory:</span><br>{{$country->territory}} KM<em>2</em></h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-home"></i>
+                                            <h4><span>AVG Price:</span><br>${{$country->avg_price}}</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <div class="main-button">
+                                                <a href="about.html">Explore More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            @endforeach
         </div>
-        
-      <nav>
-        <div class="controls">
-          <label for="banner{{$country->id}}"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">{{$country->id}}</span></label>
-          
-        </div>
-      </nav>
+        <nav>
+            <div class="controls">
+                @foreach($countries as $country)
+                <label for="banner{{$country->id}}">
+                    <span class="progressbar"><span class="progressbar-fill"></span></span>
+                    <span class="text">{{$country->id}}</span>
+                </label>
+                @endforeach
+            </div>
+        </nav>
     </div>
-    @endforeach
-  </section>
-  <!-- ***** Main Banner Area End ***** -->
-  
-  <div class="visit-country">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="section-heading">
-            <h2>Visit One Of Our Countries Now</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-          </div>
+</section>
+
+<div class="visit-country" >
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-heading">
+                    <h2>Visit One Of Our Countries Now</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <h2>Visit One Of Our Countries Now</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>    </div>
+</div>
+  
+ 
+            
+
       <div class="row">
         <div class="col-lg-8">
           <div class="items">
